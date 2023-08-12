@@ -1,15 +1,19 @@
-import {Box, Button, Container} from "@mui/material";
+import {Box, Button} from "@mui/material";
 import {MenuList} from "src/modules/menu/components/MenuList.jsx";
+import {MainContainer} from "src/shared/ui/MainContainer";
 
 export const MenuMain = () => {
   return (
-    <Container my={3} mx={3} sx={{mb:5}}>
-      <Box display="flex" my={3} justifyContent="center">
+    <MainContainer>
+      <Box display="flex" my={3} justifyContent="center" gap={3}>
         <Button color="success" variant="contained">
           Добавить меню
         </Button>
+        <Button color="success" variant="contained">
+          Добавить блюдо
+        </Button>
       </Box>
       <MenuList/>
-    </Container>
+    </MainContainer>
   );
 };

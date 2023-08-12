@@ -1,10 +1,19 @@
 import {Box, Button, Typography} from "@mui/material";
 import PropTypes from "prop-types";
+import {MainButtonBox} from "src/shared/ui/MainButtonBox.jsx";
+import {useNavigate} from "react-router-dom";
 
 export const MenuItem = ({ id, title, image, startTime, endTime }) => {
+
+  const naviate = useNavigate();
+
   const handleDeleteMenu = () => {
     console.log(id);
   };
+
+  const handleOpenMenu = () => {
+    naviate(`/menu/${id}`)
+  }
 
   return (
     <Box>
@@ -12,15 +21,15 @@ export const MenuItem = ({ id, title, image, startTime, endTime }) => {
         {title}
       </Typography>
       <Box display="flex" justifyContent="center">
-        <img alt={title} src={image} height="250px" />
+        <img alt={title} src={image} height="200" />
       </Box>
       <Typography display="flex" justifyContent="center" my={2}>
         Доступно с {startTime} - {endTime}
       </Typography>
-      <Box display='flex' justifyContent='center' gap={3}>
-        <Button variant='outlined' color='success' onClick={handleDeleteMenu}>Посмотреть</Button>
+      <MainButtonBox>
+        <Button variant='outlined' color='success' onClick={handleOpenMenu}>Посмотреть</Button>
         <Button variant='outlined' color='error' onClick={handleDeleteMenu}>Удалить</Button>
-      </Box>
+      </MainButtonBox>
     </Box>
   );
 };
