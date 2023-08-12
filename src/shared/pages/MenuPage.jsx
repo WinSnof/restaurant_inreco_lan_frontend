@@ -1,5 +1,5 @@
+import { MenuMain } from "src/modules/menu/MenuMain";
+
 export const MenuPage = () => {
-	return (
-		<>Hello from Menu page</>
-	)
-}
+  return <MenuMain />;
+};
