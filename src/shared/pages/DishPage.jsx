@@ -1,5 +1,5 @@
+import { DishMain } from "src/modules/dish/DishMain";
+
 export const DishPage = () => {
-	return (
-		<>Hello from dish page</>
-	)
-}
+  return <DishMain />;
+};
