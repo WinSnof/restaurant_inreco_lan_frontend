@@ -1,13 +1,13 @@
 import { Grid } from "@mui/material";
-import { DishItem } from "src/modules/dish/components/DishItem.jsx";
-import { mock_dish } from "src/modules/dish/mock/data.js";
+import { DishMenuItem } from "src/modules/dishMenu/components/DishMenuItem.jsx";
+import { mock_dish } from "src/modules/dishMenu/mock/data.js";
 
-export const DishList = () => {
+export const DishMenuList = () => {
   return (
     <Grid container spacing={2}>
       {mock_dish.map((i) => (
         <Grid item xs={4} key={i.id}>
-          <DishItem
+          <DishMenuItem
             id={i.id}
             title={i.title}
             price={i.price}

@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
-export const DishItem = ({ id, title, price, image, dish_type }) => {
+export const DishMenuItem = ({ id, title, price, image, dish_type }) => {
   const handleDelete = () => {
     console.log(id);
   };
@@ -27,7 +27,7 @@ export const DishItem = ({ id, title, price, image, dish_type }) => {
   );
 };
 
-DishItem.propTypes = {
+DishMenuItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,

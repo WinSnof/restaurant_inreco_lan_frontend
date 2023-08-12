@@ -1,5 +1,5 @@
 import { ModalWindow } from "src/shared/ui/ModalWindow";
-import { useDishStore } from "src/modules/dish/store/index.js";
+import { useDishStore } from "src/modules/dishMenu/store/index.js";
 import {
   Box,
   Button,
