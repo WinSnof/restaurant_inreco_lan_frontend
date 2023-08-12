@@ -12,15 +12,17 @@ export const DishItem = ({ id, title, price, image, dish_type }) => {
         <Typography variant="h5">{title}</Typography>
       </Box>
       <Box display="flex" justifyContent="center">
-        <img src={image} alt={title} height="250px" />
+        <img src={image} alt={title} height="200" />
       </Box>
       <Stack textAlign="center" my={2}>
         <Typography>Цена: {price} р.</Typography>
         <Typography>Кухня: {dish_type}</Typography>
-        <Button color="error" onClick={handleDelete} size="small">
+      </Stack>
+      <Box display="flex" justifyContent="center">
+        <Button color="error" onClick={handleDelete} variant='outlined'>
           Удалить
         </Button>
-      </Stack>
+      </Box>
     </Box>
   );
 };
