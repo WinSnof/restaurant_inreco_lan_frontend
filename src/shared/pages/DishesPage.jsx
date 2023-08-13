@@ -1,5 +1,5 @@
+import { DishesMain } from "src/modules/dishes/DishesMain";
+
 export const DishesPage = () => {
-	return (
-		<>hello </>
-	)
-}
+  return <DishesMain />;
+};

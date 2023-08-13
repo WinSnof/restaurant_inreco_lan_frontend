@@ -1,9 +1,13 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
+import {useDeleteDish} from "src/modules/dishes/hooks/index.js";
 
 export const DishMenuItem = ({ id, title, price, image, dish_type }) => {
+
+  const { mutate: deleteDishFunc } = useDeleteDish()
+
   const handleDelete = () => {
-    console.log(id);
+    deleteDishFunc(id);
   };
 
   return (
@@ -19,7 +23,7 @@ export const DishMenuItem = ({ id, title, price, image, dish_type }) => {
         <Typography>Кухня: {dish_type}</Typography>
       </Stack>
       <Box display="flex" justifyContent="center">
-        <Button color="error" onClick={handleDelete} variant='outlined'>
+        <Button color="error" onClick={handleDelete} variant="outlined">
           Удалить
         </Button>
       </Box>
