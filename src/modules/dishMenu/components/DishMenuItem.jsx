@@ -1,13 +1,14 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
-import {useDeleteDish} from "src/modules/dishes/hooks/index.js";
+import { useDeleteDishFromMenu } from "src/modules/dishMenu/hooks/index.js";
+import { useParams } from "react-router-dom";
 
 export const DishMenuItem = ({ id, title, price, image, dish_type }) => {
-
-  const { mutate: deleteDishFunc } = useDeleteDish()
-
+  const { mutate: deleteFromMenu } = useDeleteDishFromMenu();
+  const { id: menuId } = useParams();
   const handleDelete = () => {
-    deleteDishFunc(id);
+    console.log({ menuId: Number(menuId), dishId: id });
+    deleteFromMenu({ menuId: Number(menuId), dishId: id });
   };
 
   return (
@@ -32,9 +33,9 @@ export const DishMenuItem = ({ id, title, price, image, dish_type }) => {
 };
 
 DishMenuItem.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
-  dish_type: PropTypes.string.isRequired,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  image: PropTypes.string,
+  dish_type: PropTypes.string,
 };

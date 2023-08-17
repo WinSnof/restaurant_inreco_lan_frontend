@@ -1,5 +1,5 @@
 import { ModalWindow } from "src/shared/ui/ModalWindow";
-import { useDishStore } from "src/modules/dishMenu/store/index.js";
+import { useDishMenuStore } from "src/modules/dishMenu/store/index.js";
 import {
   Box,
   Button,
@@ -12,8 +12,8 @@ import { UploadImage } from "src/shared/ui/UploadImage";
 import { useState } from "react";
 
 export const AddNewDishModal = () => {
-  const isOpen = useDishStore((s) => s.addModalOpen);
-  const setIsOpen = useDishStore((s) => s.setAddModalOpen);
+  const isOpen = useDishMenuStore((s) => s.addModalOpen);
+  const setIsOpen = useDishMenuStore((s) => s.setAddModalOpen);
   const [dish, setDish] = useState({
     title: "",
     price: 0,

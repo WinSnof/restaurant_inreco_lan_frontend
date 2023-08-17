@@ -1,7 +1,6 @@
-import { create } from "zustand";
+import {create} from "zustand";
 
-export const useDishStore = create((set) => ({
+export const useMenuStore = create((set) => ({
   addModalOpen: false,
   setAddModalOpen: () => set((i) => ({ addModalOpen: !i.addModalOpen })),
 }));
-

@@ -41,8 +41,11 @@ export const AddDishModal = () => {
         value={dish.type_id}
         onChange={(e) => setDish({ ...dish, type_id: e.target.value })}
       >
+        <MenuItem value={0}>
+          None
+        </MenuItem>
         {dishTypesList?.map((i) => (
-          <MenuItem key={i.title} value={i.id}>
+          <MenuItem key={i.title + i.id} value={i.id}>
             {i.title}
           </MenuItem>
         ))}

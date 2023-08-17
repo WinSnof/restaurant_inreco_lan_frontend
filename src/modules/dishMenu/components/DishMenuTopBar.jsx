@@ -1,10 +1,10 @@
 import { Box, IconButton } from "@mui/material";
 import { AddCircleOutlined, ArrowBack } from "@mui/icons-material";
-import { useDishStore } from "src/modules/dishMenu/store/index.js";
+import { useDishMenuStore } from "src/modules/dishMenu/store/index.js";
 import { useNavigate } from "react-router-dom";
 
 export const DishMenuTopBar = () => {
-  const setAddDishModalOpen = useDishStore((s) => s.setAddModalOpen);
+  const setAddDishModalOpen = useDishMenuStore((s) => s.setAddModalOpen);
   const navigate = useNavigate();
 
   const handleNavigateToMenu = () => {
@@ -22,6 +22,7 @@ export const DishMenuTopBar = () => {
           <AddCircleOutlined color="inherit" />
         </IconButton>
       </Box>
+
     </>
   );
 };
